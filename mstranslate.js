@@ -1,3 +1,7 @@
+Microsoft = {
+	translate: translate
+}
+
 function translate(text, language) {
 	var response = HTTP.get('http://api.microsofttranslator.com/V2/Ajax.svc/Translate', {
 		params: {
@@ -11,5 +15,3 @@ function translate(text, language) {
 
 	return EJSON.parse(response.content)
 }
-
-console.log(translate("Do you have a cowboy hat?", "en"))

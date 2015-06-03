@@ -1,6 +1,6 @@
 Package.describe({
   name: 'devian:mstranslate',
-  version: '0.0.3',
+  version: '0.0.4',
   // Brief, one-line summary of the package.
   summary: 'Tranlsate with Microsoft Translator',
   // URL to the Git repository containing the source code for this package.
@@ -15,6 +15,8 @@ Package.onUse(function(api) {
   api.use(['http', 'ejson'], 'server');
   
   api.addFiles(['authentication.js','mstranslate.js'], 'server');
+
+  api.export('Microsoft', 'server');
 });
 
 Package.onTest(function(api) {
