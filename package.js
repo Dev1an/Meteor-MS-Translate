@@ -12,7 +12,7 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
-  api.use(['http', 'ejson', 'peerlibrary:xml2js'], 'server');
+  api.use(['http', 'ejson', 'peerlibrary:xml2js@0.4.8_1'], 'server');
   
   api.addFiles(['authentication.js','mstranslate.js'], 'server');
 
