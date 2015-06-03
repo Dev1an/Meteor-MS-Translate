@@ -4,12 +4,12 @@ Microsoft = {
 }
 
 function request(path, params) {
-	var response = HTTP.get('http://api.microsofttranslator.com/V2/Ajax.svc/' + path, {
+	var response = HTTP.get('http://api.microsofttranslator.com/V2/Http.svc/' + path, {
 		params: _.extend({ appId: ''}, params),
 		headers: getAuthorizationHeader()
 	})
 
-	return EJSON.parse(response.content)
+	return xml2js.parseStringSync(response.content).string['_']
 }
 
 function translate(text, language) {
